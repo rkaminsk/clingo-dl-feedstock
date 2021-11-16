@@ -14,8 +14,6 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - python  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - make  # [unix]
@@ -24,14 +22,17 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - clingo
+    - clingo >=5.5.1
   run:
-    - clingo >=5.5
     - python
+    - clingo >=5.5.1
     - cffi  # [python_impl == 'cpython']
 
 test:
+  requires:
+    - pip
   commands:
+    - pip check
     - clingo-dl --version
     - python -m clingodl --version
 
