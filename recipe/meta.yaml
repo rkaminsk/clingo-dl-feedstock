@@ -1,5 +1,5 @@
 {% set name = "clingo-dl" %}
-{% set version = "1.2.0" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/potassco/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: daceed282ae46f443b0423be4f6e68b9559159639522dbdcb1aae6a623566b4d
+  sha256: 98f70170a9916e67e8fd247adc3848f73405385b7b6277de528d99d55f8074d1
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
