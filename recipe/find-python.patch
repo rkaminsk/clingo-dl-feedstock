@@ -1,3 +1,16 @@
+diff --git CMakeLists.txt CMakeLists.txt
+index 818d892..96828f1 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -12,6 +12,8 @@ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+     set(CMAKE_BUILD_TYPE "Release")
+ endif()
+ 
++list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
++
+ # Enable folders in IDEs like Visual Studio
+ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+ set(CMAKE_CXX_STANDARD 17)
 diff --git cmake/FindPackageHandleStandardArgs.cmake cmake/FindPackageHandleStandardArgs.cmake
 new file mode 100644
 index 0000000..fbcf7cd
