@@ -27,7 +27,8 @@ requirements:
     - clingo >=5.5.1
   run:
     - python
-    - clingo >=5.5.1
+    # clingo breaks the API with minor version increments
+    - {{ pin_compatible('clingo', min_pin='x.x', max_pin='x.x') }}
     - cffi  # [python_impl == 'cpython']
 
 test:
